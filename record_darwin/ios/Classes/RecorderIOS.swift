@@ -24,13 +24,13 @@ extension Recorder {
       throw RecorderError.error(message: "Failed to start recording", details: "setActive: \(error.localizedDescription)")
     }
     
-    do {
-      try audioSession.setPreferredInputNumberOfChannels(
-        (config.numChannels > audioSession.inputNumberOfChannels) ? audioSession.inputNumberOfChannels : max(1, config.numChannels)
-      )
-    } catch {
-      throw RecorderError.error(message: "Failed to start recording", details: "setPreferredInputNumberOfChannels: \(error.localizedDescription)")
-    }
+    // do {
+    //   try audioSession.setPreferredInputNumberOfChannels(
+    //     (config.numChannels > audioSession.inputNumberOfChannels) ? audioSession.inputNumberOfChannels : max(1, config.numChannels)
+    //   )
+    // } catch {
+    //   throw RecorderError.error(message: "Failed to start recording", details: "setPreferredInputNumberOfChannels: \(error.localizedDescription)")
+    // }
     
     NotificationCenter.default.addObserver(
       forName: AVAudioSession.interruptionNotification,
